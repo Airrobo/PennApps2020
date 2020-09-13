@@ -1,0 +1,27 @@
+{
+  "name": "gazecloud",
+  "version": "1.0.0",
+  "description": "Real-Time online Eye-Tracking",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szydej/GazeCloud.git"
+  },
+  "author": "Andrew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/szydej/GazeCloud/issues"
+  },
+  "homepage": "https://github.com/szydej/GazeCloud#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-plugin-react": "^7.20.6",
+    "nodemon": "^2.0.4"
+  }
+}
