@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Results</title>
+
+  <link rel="stylesheet" href="/results.css">
+  <script type="text/javascript" src="/math.js"></script>
+  <script  type="text/javascript">
+  
+  // Get it from the local storage
+  var averageXResults = localStorage.getItem("averageX");
+  var averageYResults = localStorage.getItem("averageY");
+  var medianXResults = localStorage.getItem("medianX");
+  var medianYResults = localStorage.getItem("medianY");
+  var xText;
+  var yText;
+  var finalText;
+  if (medianXResults < 480){
+      xText = "Left";
+  }
+  if (medianXResults > 480 && medianXResults < 960){
+    xText = "Middle";
+  }
+  if(medianXResults > 960){
+    xText = "Right";
+  }
+
+  if (medianYResults < 263){
+      yText = "Top";
+  }
+  if (medianYResults > 263 && medianYResults < 526){
+    yText = "Middle";
+  }
+  if(medianYResults > 789){
+    yText = "Bottom";
+  }
+
+var finalText = yText + " " + xText;
+  if(xText.equals("Middle") && yText.equals("Middle")){
+    finalText = "Dead Center";
+  }
+
+  var outputText = "You tend to look at the " + finalText + "of the computer screen. Keep up the good work!";
+  console.log(finalText);
+
+  document.getElementById("eyeTrackerText").innerHTML = outputText;
+
+</script>
+
+</head>
+<body>
+  <ul class="display-container">
+    <li class="note-display" id = "fillerWords" data-note="7.50">
+      <div class="circle">
+        <svg width="84" height="84" class="circle__svg">
+          <circle cx="41" cy="41" r="38" class="circle__progress circle__progress--path"></circle>
+          <circle cx="41" cy="41" r="38" class="circle__progress circle__progress--fill"></circle>
+        </svg>
+
+        <div class="percent">
+          <span class="percent__int">0.</span>
+          <span class="percent__dec">00</span>
+        </div>
+      </div>
+
+      <span class="label">Filler Words</span>
+    </li>
+
+    <li class="note-display" id = "pauses" data-note="2.42">
+      <div class="circle">
+        <svg width="84" height="84" class="circle__svg">
+          <circle cx="41" cy="41" r="38" class="circle__progress circle__progress--path"></circle>
+          <circle cx="41" cy="41" r="38" class="circle__progress circle__progress--fill"></circle>
+        </svg>
+
+        <div class="percent">
+          <span class="percent__int">0.</span>
+          <span class="percent__dec">00</span>
+        </div>
+      </div>
+
+      <span class="label">Pauses in Speech</span>
+    </li>
+
+    <li class="note-display" id = "volumeCir" data-note="2.42">
+      <div class="circle">
+        <svg width="84" height="84" class="circle__svg">
+          <circle cx="41" cy="41" r="38" class="circle__progress circle__progress--path"></circle>
+          <circle cx="41" cy="41" r="38" class="circle__progress circle__progress--fill"></circle>
+        </svg>
+
+        <div class="percent">
+          <span class="percent__int">0.</span>
+          <span class="percent__dec">00</span>
+        </div>
+      </div>
+
+      <span class="label">Volume</span>
+    </li>
+
+
+  </ul>
+
+  <div>
+   <h2 id="eyeTrackerText"></h2>
+  </div>
+
+  <script src="./scripts.js"></script>
+  <script type='text/javascript' src='jquery-3.3.1.min.js'></script>
+  <script type='text/javascript' src='volume-meter.js'></script>
+  <script type='text/javascript'>
+
+  setResultValues();
+  
+  function setResultValues()
+  {
+	var vol = localStorage.getItem("volume");
+	//$('#volumeCir').attr("data-note", "2.5"); 
+
+	//var circ = document.getElementById('volume');
+	//circ.setAttribute('data-note', vol);
+	console.log(vol);
+	
+	//const article = document.querySelector('#volumeCir');
+ 
+	//article.dataset.note = vol;
+	//console.log($(this).data('height'))
+	console.log($( "volumeCir" ).data( "note", "5.00" ));
+
+  }
+
+  
+  </script>
+</body>
+</html>
