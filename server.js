@@ -5,7 +5,7 @@ const app = express();
 app.use(express.static('static'));
 
 app.get('/', (req, res) => {
-    res.sendFile('/Users/andrew/Documents/GazeCloud/public/index.html');
+    res.sendFile('public/index.html', {root:__dirname});
 });
 
 app.listen(3000, () => console.log(' listening on port 3000!'));
